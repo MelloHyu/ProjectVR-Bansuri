@@ -49,16 +49,9 @@ public class Arrow : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        if (_inAir)
-        {
-            CheckCollision();
-            _lastPosition = tip.position;
-        }
-    }
-   
-    private void CheckCollision()
+    
+
+    public void OnCollisionEnter(Collision collision)
     {
         if (Physics.Linecast(_lastPosition, tip.position, out RaycastHit hitInfo))
         {
